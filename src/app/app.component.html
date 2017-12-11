@@ -1,11 +1,11 @@
 <ngx-carousel
 	[inputs]="carouselOne"
 	(carouselLoad)="myfunc($event)">
-		<ngx-tile NgxCarouselItem>
-			<div>One</div>
-		</ngx-tile>
-		<ngx-tile NgxCarouselItem>
-			<div>Two</div>
+		<ngx-tile NgxCarouselItem *ngFor="let bookmark of _bookmarks">
+			<div style="height: 50vh;">
+			<div>{{bookmark.Url}}</div>
+			<div>{{bookmark.Title}}</div>
+			</div>
 		</ngx-tile>
 		<button style="display: hidden;" NgxCarouselPrev class="leftRs">Left</button>
 		<button style="display: hidden;" NgxCarouselNext class="rightRs">Right</button>

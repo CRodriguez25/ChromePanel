@@ -1,29 +1,38 @@
 import { Component } from '@angular/core';
 import { NgxCarousel } from 'ngx-carousel';
+import { Bookmark, BookmarkRepoService, IBookmarkRepoSubscriber } from './services/bookmark-repo/bookmark-repo.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements IBookmarkRepoSubscriber {
+	private _bookmarks: Bookmark[];
+	
+	constructor(private _bookMarkRepoService: BookmarkRepoService) {
+		this._bookmarks = _bookMarkRepoService.Subscribe(this);
+	}
+	
 	public carouselOne: NgxCarousel;
 	ngOnInit() {
 		this.carouselOne = {
-			grid: {xs: 1, sm: 1, md: 1, lg: 1, all: 0},
-			slide: 1,
+			grid: {xs: 3, sm: 3, md: 4, lg: 5, all: 0},
+			slide: 2,
 			speed: 400,
-			interval: 4000,
 			point: {
 				visible: true
 			},
-			load: 2,
-			touch: true,
-			loop: true
+			load: 1,
+			touch: true
 		}
 	}
 	
 	public myfunc(event: Event) {
 		
+	}
+	
+	public BookmarksUpdated(bookmarks: Bookmark[]) {
+		this._bookmarks = bookmarks;
 	}
 }
