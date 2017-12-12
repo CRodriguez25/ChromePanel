@@ -11,7 +11,7 @@ export class AppComponent implements IBookmarkRepoSubscriber {
 	private _bookmarks: Bookmark[];
 	
 	constructor(private _bookMarkRepoService: BookmarkRepoService) {
-		this._bookmarks = _bookMarkRepoService.Subscribe(this);
+		this._bookmarks = _bookMarkRepoService.subscribe(this);
 	}
 	
 	public carouselOne: NgxCarousel;
@@ -26,10 +26,6 @@ export class AppComponent implements IBookmarkRepoSubscriber {
 			load: 1,
 			touch: true
 		}
-	}
-	
-	public myfunc(event: Event) {
-		
 	}
 	
 	public BookmarksUpdated(bookmarks: Bookmark[]) {

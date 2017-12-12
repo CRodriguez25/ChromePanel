@@ -4,12 +4,12 @@ import { Injectable } from '@angular/core';
 export class BookmarkRepoService {
 	constructor() { }
 	
-	public Subscribe(subscriber: IBookmarkRepoSubscriber): Bookmark[] {
+	public subscribe(subscriber: IBookmarkRepoSubscriber): Bookmark[] {
 		var result = [];
-		var bookmark1 = new Bookmark("url1", "title1");
-		var bookmark2 = new Bookmark("url2", "title2");
-		var bookmark3 = new Bookmark("url3", "title3");
-		var bookmark4 = new Bookmark("url4", "title4");
+		var bookmark1 = new Bookmark("www.google.com", "Google");
+		var bookmark2 = new Bookmark("www.stackoverflow.com", "Stack Overflow");
+		var bookmark3 = new Bookmark("www.facebook.com", "Facebook");
+		var bookmark4 = new Bookmark("https://github.com/CRodriguez25/EliteDangerousPanel", "Elite Panel Repo");
 		var bookmark5 = new Bookmark("url5", "title5");		
 		result.push(bookmark1);
 		result.push(bookmark2);

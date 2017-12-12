@@ -1,12 +1,15 @@
-<ngx-carousel
-	[inputs]="carouselOne"
-	(carouselLoad)="myfunc($event)">
-		<ngx-tile NgxCarouselItem *ngFor="let bookmark of _bookmarks">
-			<div style="height: 50vh;">
-			<div>{{bookmark.Url}}</div>
-			<div>{{bookmark.Title}}</div>
-			</div>
-		</ngx-tile>
-		<button style="display: hidden;" NgxCarouselPrev class="leftRs">Left</button>
-		<button style="display: hidden;" NgxCarouselNext class="rightRs">Right</button>
-</ngx-carousel>
+<div class="bookmark-carousel">
+	<ngx-carousel
+		[inputs]="carouselOne">
+			<ngx-tile NgxCarouselItem *ngFor="let bookmark of _bookmarks">
+				<div class="bookmark-tile">
+					<img style="width: 100%; height: 100%; margin: 0 auto;" src='http://icons.better-idea.org/icon?url={{bookmark.Url}}&size=80..200..500'>
+				</div>
+				<div style="text-align: center;">
+					{{bookmark.Title}}	
+				</div>
+			</ngx-tile>
+			<button style="display: hidden;" NgxCarouselPrev class="leftRs">Left</button>
+			<button style="display: hidden;" NgxCarouselNext class="rightRs">Right</button>
+	</ngx-carousel>
+</div>

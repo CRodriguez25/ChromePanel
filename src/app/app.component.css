@@ -1,3 +1,18 @@
+.bookmark-carousel {
+	margin-top: 20vh;	
+}
+
+.bookmark-tile {
+	height: 46vh;
+	padding: 1vw;
+}
+
+.bookmark-header {
+	text-align: center;
+	color: black;
+	font-size: 3.5vw;
+}
+
 .leftRs {
 	display: none !important;
 }
@@ -5,3 +20,4 @@
 .rightRs {
 	display: none !important;
 }
+
