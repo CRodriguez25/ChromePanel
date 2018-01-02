@@ -29,7 +29,9 @@ export class BookmarkRepoService {
 		var bookmark3 = new Bookmark("www.facebook.com", "Facebook");
 		var bookmark4 = new Bookmark("https://github.com/CRodriguez25/EliteDangerousPanel", "Elite Panel Repo");
 		var bookmark5 = new Bookmark("yahoo.com", "Yahoo");		
+		var bookmark6 = new Bookmark("www.reddit.com", "Reddit Babyyyy");
 		result.push(bookmark1);
+		result.push(bookmark6);
 		newResult.push(bookmark1);
 		newResult.push(new Bookmark("www.macrumors.com", "MacRumors"));
 		result.push(bookmark2);
