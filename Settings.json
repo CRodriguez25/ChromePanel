@@ -1,0 +1,13 @@
+{  
+    "KeyBindings":{  
+        "BookmarkPressed": {
+            "Type": 1,
+            "Value": "start \"C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe\" $$url$$"
+        }
+   },
+
+   "LabelBindings":{  
+   },
+   
+   "Program": "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
+}

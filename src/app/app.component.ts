@@ -17,7 +17,7 @@ export class AppComponent implements IBookmarkRepoSubscriber {
 	public carouselOne: NgxCarousel;
 	ngOnInit() {
 		this.carouselOne = {
-			grid: {xs: 3, sm: 3, md: 4, lg: 5, all: 0},
+			grid: {xs: 3, sm: 3, md: 4, lg: 4, all: 0},
 			slide: 2,
 			speed: 400,
 			point: {
@@ -29,6 +29,17 @@ export class AppComponent implements IBookmarkRepoSubscriber {
 	}
 	
 	public BookmarksUpdated(bookmarks: Bookmark[]) {
-		this._bookmarks = bookmarks;
-	}
+        this._bookmarks = bookmarks;
+    }
+    
+    public bookmarkPressed(bookmark: Bookmark) {
+        window.location.href = "panelsapp://BookmarkPressed?url=" + bookmark.Url;
+    }
+
+    public truncate(string) {
+        if (string.length > 40)
+           return string.substring(0,40)+'...';
+        else
+           return string;
+     };
 }
