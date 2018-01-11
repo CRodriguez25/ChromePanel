@@ -1,0 +1,37 @@
+
+<div class="container"  *ngIf="_items != null && _items.length > 0">
+    <div class="helper">
+        <div class="content">
+            <div class="bookmark-carousel">
+                <ngx-carousel
+                        [inputs]="carouselOne">
+                            <ngx-tile NgxCarouselItem *ngFor="let bookmark of _items">
+                                <div *ngIf="bookmark.Type === 'Close'" (click)="handleClose()">
+                                    <div class="bookmark-tile">
+                                        <img style="width: 100%; margin: 0 auto;" src='assets/close.png'>
+                                    </div>
+                                    <div style="text-align: center; padding: 5px; background-color: white;">
+                                        Close Folder
+                                    </div>
+                                </div>
+                                <app-bookmark-link *ngIf="bookmark.Type === 'Bookmark'" [bookmark]="bookmark"></app-bookmark-link>
+                                <app-bookmark-folder *ngIf="bookmark.Type === 'Folder'" [folder]="bookmark"></app-bookmark-folder>
+                            </ngx-tile>
+                            <button style="display: hidden;" NgxCarouselPrev class="leftRs">Left</button>
+                            <button style="display: hidden;" NgxCarouselNext class="rightRs">Right</button>
+                    </ngx-carousel>
+                </div>
+            </div>
+        </div>
+</div>
+<div class="container" *ngIf="_items == null || _items.length == 0">
+    <div class="helper">
+        <div class="content">
+            <div  class="no-bookmarks">
+                No Bookmarks Found
+            </div>
+        </div>
+    </div>
+</div>
+
+

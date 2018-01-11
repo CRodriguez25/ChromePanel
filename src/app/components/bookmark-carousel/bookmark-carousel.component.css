@@ -1,0 +1,42 @@
+.bookmark-carousel {
+    width: 90%;	
+    margin: 10vh auto;
+}
+
+
+.bookmark-header {
+	text-align: center;
+	color: black;
+	font-size: 3.5vw;
+}
+
+.leftRs {
+	display: none !important;
+}
+
+.rightRs {
+	display: none !important;
+}
+
+.no-bookmarks {
+    color: lightgray;
+    font-size: 6vw;
+    text-align: center;
+}
+
+.container {
+    display: table;
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+}
+
+.helper {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.content {
+    margin: 0 auto;
+    width: 90%;
+}

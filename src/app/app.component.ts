@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { NgxCarousel } from 'ngx-carousel';
 import { Bookmark, BookmarkRepoService, IBookmarkRepoSubscriber } from './services/bookmark-repo/bookmark-repo.service';
 
 @Component({
@@ -8,38 +7,17 @@ import { Bookmark, BookmarkRepoService, IBookmarkRepoSubscriber } from './servic
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements IBookmarkRepoSubscriber {
-	private _bookmarks: Bookmark[];
+	private _bookmarks;
 	
 	constructor(private _bookMarkRepoService: BookmarkRepoService) {
 		this._bookmarks = _bookMarkRepoService.subscribe(this);
 	}
 	
-	public carouselOne: NgxCarousel;
 	ngOnInit() {
-		this.carouselOne = {
-			grid: {xs: 3, sm: 3, md: 4, lg: 4, all: 0},
-			slide: 2,
-			speed: 400,
-			point: {
-				visible: true
-			},
-			load: 1,
-			touch: true
-		}
+		
 	}
 	
-	public BookmarksUpdated(bookmarks: Bookmark[]) {
+	public BookmarksUpdated(bookmarks) {
         this._bookmarks = bookmarks;
     }
-    
-    public bookmarkPressed(bookmark: Bookmark) {
-        window.location.href = "panelsapp://BookmarkPressed?url=" + bookmark.Url;
-    }
-
-    public truncate(string) {
-        if (string.length > 40)
-           return string.substring(0,40)+'...';
-        else
-           return string;
-     };
 }

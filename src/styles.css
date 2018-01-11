@@ -11,6 +11,23 @@ body {
 }
 
 html, body {
-	position: fixed;
 	overflow: hidden;
+}
+
+.cdk-overlay-pane {
+    max-width: 90vw !important;
+    max-height: 100vh !important;
+    margin: 0 auto;
+    overflow-y: hidden;
+}
+
+.mat-dialog-container {
+    overflow-y: hidden !important;
+}
+
+
+.bookmark-tile {
+    height: 100%;
+    padding: 1vw;
+    background-color: white;
 }
