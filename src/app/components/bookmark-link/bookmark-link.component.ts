@@ -7,7 +7,8 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class BookmarkLinkComponent implements OnInit {
     @Input() public bookmark: any;
-
+    public logoLoaded: boolean = false;
+    
     constructor() { }
     ngOnInit() { }
 
